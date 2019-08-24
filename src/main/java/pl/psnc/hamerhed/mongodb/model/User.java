@@ -13,10 +13,13 @@ public class User {
 
     private Gender gender;
     
+    private Organization organization;
+    
     private User() {}
     
-    public User(Gender gender) {
+    public User(Gender gender, Organization org) {
     	this.gender = gender;
+    	this.organization = org;
     }
 
     public String getId() {
@@ -33,6 +36,14 @@ public class User {
 
 	private void setGender(Gender gender) {
 		this.gender = gender;
+	}
+
+	public Organization getOrganization() {
+		return organization;
+	}
+
+	private void setOrganization(Organization organization) {
+		this.organization = organization;
 	}
 
    

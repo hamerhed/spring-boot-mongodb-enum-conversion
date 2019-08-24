@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import pl.psnc.hamerhed.mongodb.model.Gender;
+import pl.psnc.hamerhed.mongodb.model.Organization;
 import pl.psnc.hamerhed.mongodb.model.User;
 import pl.psnc.hamerhed.mongodb.persistance.UserRepository;
 
@@ -41,12 +42,10 @@ public class UsersController {
 	@GetMapping("/users/add/{gender}")
 	public String addUser(@PathVariable(value="gender") String gender, Model model) {
 		User user = null;
-		System.out.println("add user [" + gender + "]");
 		if("male".equals(gender)) {
-			user = new User(Gender.MALE);
-			System.out.println("add male");
+			user = new User(Gender.MALE, Organization.X);
 		} else if ("female".equals(gender)) {
-			user = new User(Gender.FEMALE);
+			user = new User(Gender.FEMALE, Organization.Z);
 		}
 		
 		if(user != null) {

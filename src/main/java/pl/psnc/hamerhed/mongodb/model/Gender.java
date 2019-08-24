@@ -17,6 +17,13 @@ public enum Gender {
 		return value;
 	}
 	
+	@Override
+	public String toString() {
+		return value;
+	}
+
+
+	//approach using dedicated read and write converters for each enum
 	public static class GenderWriteConverter implements Converter<Gender, String> {
 
 		@Override
@@ -36,4 +43,5 @@ public enum Gender {
 		}
 		
 	}
+	
 }

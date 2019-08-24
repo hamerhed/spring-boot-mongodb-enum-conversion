@@ -2,11 +2,12 @@
 <body>
 	<h1>Users</h1>
 
-	<table
-	<th><td>Id</td><td>Gender</td></th>
+	<table>
+	<th><td>Id</td><td>Gender</td><td>Organization</td></th>
 	<tr th:each="user : ${users}">
 	    <td th:text="${user.id}" />
 	    <td th:text="${user.gender}" />
+	    <td th:text="${user.organization}" />
 	</tr>
 	</table>
 	<a href="/">Back to home page</a>	
